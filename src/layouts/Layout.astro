@@ -1,0 +1,61 @@
+---
+import "@fontsource-variable/inter";
+import Footer from "../components/footer.astro";
+import Header from "../components/header.astro";
+import "../styles/index.css";
+
+const socialMetaImage = new URL("hands.jpg", Astro.site);
+const { pageTitle } = Astro.props;
+const SiteDescription = "ISC_BD"; //TODO
+---
+
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<!-- TODO: change the favicon -->
+		<!-- <link rel="icon" href="/favicon.svg" type="image/svg+xml" /> -->
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={SiteDescription} />
+		<title>{pageTitle}</title>
+
+		<!-- social media -->
+		<meta property="og:title" content="ISC-BD" />
+		<meta property="og:type" content="website" />
+		<meta property="og:description" content={SiteDescription} />
+		<meta property="og:image" content={socialMetaImage} />
+		<meta property="og:url" content={Astro.site} />
+		<meta name="twitter:card" content="summary_large_image" />
+
+		<!-- initialize theme -->
+		<script is:inline>
+			const themeSaved = localStorage.getItem("theme");
+
+			if (themeSaved) {
+				document.documentElement.dataset.theme = themeSaved;
+			} else {
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+			}
+
+			window
+				.matchMedia("(prefers-color-scheme: dark)")
+				.addEventListener("change", (event) => {
+					if (!localStorage.getItem("theme")) {
+						document.documentElement.dataset.theme = event.matches
+							? "dark"
+							: "light";
+					}
+				});
+		</script>
+	</head>
+	<body class="h-full overflow-x-hidden text-base">
+		<Header />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

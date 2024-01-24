@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<style>
+  .ff {
+    font-family: "Inter Variable", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+  .flc > * {
+    /* flex-grow: 1; */
+    flex-basis: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .icon {
+    border-radius: 50%;
+    background: #bc7464;
+    padding: 20px;
+    margin-bottom: 1rem;
+  }
+</style>
+
+<section class="text-slate-300 font-semibold bg-slate-800">
+  <div class="text-center text-cyan-200 ff py-12">Contact US</div>
+  <div class="flex justify-around flc flex-col lg:flex-row gap-4">
+    <div class="py-8">
+      <div class="icon">
+        <Icon name="mdi:location" class="text-white text-xl" />
+      </div>
+      <p class="text-center w-[20ch]">
+        1048, East Monipur, Kathaltola, Section-2, Mirpur, Dhaka-1216
+      </p>
+    </div>
+    <div class="py-8">
+      <div class="icon">
+        <Icon name="mdi:email" class="text-white text-xl" />
+      </div>
+      <a href="mailto:isc.bd2022@gmail.com" class="block"
+        >isc.bd2022@gmail.com</a
+      >
+      <a href="mailto:anik.asad.72@gmail.com" class="block"
+        >anik.asad.72@gmail.com</a
+      >
+    </div>
+
+    <div class="py-8">
+      <div class="icon">
+        <Icon name="mdi:phone" class="text-white text-xl" />
+      </div>
+      <p>+8801710845597</p>
+    </div>
+  </div>
+</section>

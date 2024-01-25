@@ -6,17 +6,14 @@ import logo from "../icons/Logo2.svg";
 ---
 
 <style>
-  #data-header {
+  .m_fade {
+    visibility: hidden;
     opacity: 0;
-    transition: opacity 0.7s ease-in-out;
-  }
-
-  #data-header:not(.hidden) {
-    opacity: 1;
+    transition: visibility 0s linear 300ms;
   }
 </style>
 
-<header class="pb-6 bg-white lg:pb-0">
+<header class="pb-6 bg-white lg:pb-0 sticky top-0 z-50">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- lg+ -->
     <nav class="flex items-center justify-between h-16 lg:h-20">
@@ -72,7 +69,7 @@ import logo from "../icons/Logo2.svg";
     <!-- xs to lg -->
     <nav
       id="data-header"
-      class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden"
+      class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md hidden"
     >
       <div class="flow-root">
         <div class="flex flex-col px-6 -my-2 space-y-1">
@@ -90,5 +87,6 @@ import logo from "../icons/Logo2.svg";
   const nav = document.querySelector("#data-header");
   button.addEventListener("click", () => {
     nav.classList.toggle("hidden");
+    // nav.classList.toggle("m_fade");
   });
 </script>

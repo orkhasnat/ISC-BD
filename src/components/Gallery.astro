@@ -5,6 +5,18 @@ import hands from "@/assets/gallery/hands.jpg";
 import moon from "@/assets/gallery/moon.jpg";
 import astronaut from "@/assets/gallery/astronaut.png";
 const images = [hands, moon, astronaut];
+
+// const ButtonComp = (index) => {
+//   return (
+//     <button
+//       type="button"
+//       class="w-3 h-3 rounded-full"
+//       aria-current="false"
+//       aria-label={`Slide ${index + 1}`}
+//       data-carousel-slide-to={`${index}`}
+//     ></button>
+//   );
+// };
 ---
 
 <div class="flex flex-col justify-center items-center py-6">
@@ -44,6 +56,12 @@ const images = [hands, moon, astronaut];
     <div
       class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
     >
+      <!-- {ButtonComp(0)}
+      {ButtonComp(1)}
+      {ButtonComp(2)}
+      {ButtonComp(3)}
+      {ButtonComp(4)} -->
+
       <button
         type="button"
         class="w-3 h-3 rounded-full"

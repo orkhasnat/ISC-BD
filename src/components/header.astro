@@ -5,6 +5,17 @@ import HeaderLinkSmall from "../components/headerlink-small.astro";
 import logo from "../icons/Logo2.svg";
 ---
 
+<style>
+  #data-header {
+    opacity: 0;
+    transition: opacity 0.7s ease-in-out;
+  }
+
+  #data-header:not(.hidden) {
+    opacity: 1;
+  }
+</style>
+
 <header class="pb-6 bg-white lg:pb-0">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- lg+ -->
@@ -18,6 +29,7 @@ import logo from "../icons/Logo2.svg";
       <button
         type="button"
         class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+        id="data-button"
       >
         <!-- Menu open: "hidden", Menu closed: "block" -->
         <svg
@@ -59,6 +71,7 @@ import logo from "../icons/Logo2.svg";
 
     <!-- xs to lg -->
     <nav
+      id="data-header"
       class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md lg:hidden"
     >
       <div class="flow-root">
@@ -71,3 +84,11 @@ import logo from "../icons/Logo2.svg";
     </nav>
   </div>
 </header>
+
+<script>
+  const button = document.querySelector("button#data-button");
+  const nav = document.querySelector("#data-header");
+  button.addEventListener("click", () => {
+    nav.classList.toggle("hidden");
+  });
+</script>

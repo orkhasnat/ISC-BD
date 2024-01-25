@@ -1,5 +1,6 @@
 ---
 import "@fontsource-variable/inter";
+import "flowbite";
 import Footer from "../components/footer.astro";
 import Header from "../components/header.astro";
 import "../styles/index.css";
@@ -28,7 +29,7 @@ const SiteDescription = "ISC_BD"; //TODO
 		<meta name="twitter:card" content="summary_large_image" />
 
 		<!-- initialize theme -->
-		<script is:inline>
+		<!-- <script is:inline>
 			const themeSaved = localStorage.getItem("theme");
 
 			if (themeSaved) {
@@ -49,7 +50,7 @@ const SiteDescription = "ISC_BD"; //TODO
 							: "light";
 					}
 				});
-		</script>
+		</script> -->
 	</head>
 	<body class="h-full overflow-x-hidden text-base">
 		<Header />
@@ -57,5 +58,6 @@ const SiteDescription = "ISC_BD"; //TODO
 			<slot />
 		</main>
 		<Footer />
+		<script src="node_modules/flowbite/dist/flowbite.min.js"></script>
 	</body>
 </html>

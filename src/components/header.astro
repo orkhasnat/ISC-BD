@@ -30,6 +30,7 @@ import logo from "../icons/Logo2.svg";
       >
         <!-- Menu open: "hidden", Menu closed: "block" -->
         <svg
+          id="data-menu"
           class="block w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -40,11 +41,12 @@ import logo from "../icons/Logo2.svg";
             stroke-linecap="round"
             stroke-linejoin="round"
             stroke-width="2"
-            d="M4 8h16M4 16h16"></path>
+            d="M4 6 h16 M4 12 h 16 M4 18 h16"></path>
         </svg>
 
         <!-- Menu open: "block", Menu closed: "hidden" -->
         <svg
+          id="data-close"
           class="hidden w-6 h-6"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -87,8 +89,13 @@ import logo from "../icons/Logo2.svg";
 <script>
   const button = document.querySelector("button#data-button");
   const nav = document.querySelector("#data-header");
+  const menu = document.querySelector("#data-menu");
+  const close = document.querySelector("#data-close");
   button.addEventListener("click", () => {
     nav.classList.toggle("hidden");
     // nav.classList.toggle("m_fade");
+    // hamburger menu
+    menu.classList.toggle("hidden");
+    close.classList.toggle("hidden");
   });
 </script>

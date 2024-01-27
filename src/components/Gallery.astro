@@ -1,25 +1,78 @@
 ---
 import { Image } from "astro:assets";
-
+// Image Imports
 import hands from "@/assets/gallery/hands.jpg";
-import moon from "@/assets/gallery/moon.jpg";
-import astronaut from "@/assets/gallery/astronaut.png";
-const images = [hands, moon, astronaut];
+import comMeeting from "@/assets/gallery/communitymeeting.jpg";
+import comMeeting2 from "@/assets/gallery/communitymeeting2.jpg";
+import clothes from "@/assets/gallery/Distibutions of winter clothes.jpg";
+import fbimage0 from "@/assets/gallery/FB_IMG_1680623827900.jpg";
+import fbimage1 from "@/assets/gallery/FB_IMG_1680623834197.jpg";
+import fbimage2 from "@/assets/gallery/FB_IMG_1680623892290.jpg";
+import fbimage3 from "@/assets/gallery/FB_IMG_1680623908620.jpg";
+import fbimage4 from "@/assets/gallery/FB_IMG_1680623917342.jpg";
+import fbimage5 from "@/assets/gallery/FB_IMG_1680623924319.jpg";
+import fbimage6 from "@/assets/gallery/FB_IMG_1680624615545.jpg";
+import fbimage7 from "@/assets/gallery/FB_IMG_1680624991304.jpg";
+import good from "@/assets/gallery/IMG20221209121430.jpg";
+import karam1 from "@/assets/gallery/karam1.jpg";
+import karam2 from "@/assets/gallery/karam2.jpg";
+import karam3 from "@/assets/gallery/karam3.jpg";
+import karam4 from "@/assets/gallery/karam4.jpg";
+import karam5 from "@/assets/gallery/karam5.jpeg";
+import meeting0 from "@/assets/gallery/meeting0.jpg";
+import meeting1 from "@/assets/gallery/meeting1.jpg";
+import meeting2 from "@/assets/gallery/meeting2.jpeg";
+import meeting3 from "@/assets/gallery/meeting3.jpeg";
+
+const images = [
+  comMeeting,
+  comMeeting2,
+  fbimage0,
+  fbimage1,
+  fbimage2,
+  fbimage3,
+  fbimage4,
+  fbimage5,
+  fbimage6,
+  fbimage7,
+  good,
+  karam1,
+  karam2,
+  karam3,
+  karam4,
+  karam5,
+  meeting0,
+  meeting1,
+  meeting2,
+  meeting3,
+];
+let shuffled = images
+  .map((value) => ({ value, sort: Math.random() }))
+  .sort((a, b) => a.sort - b.sort)
+  .map(({ value }) => value);
 ---
 
-<div class="flex justify-center align-middle text-4xl font-extrabold">
+<div class="flex justify-center align-middle text-4xl font-extrabold py-4 pt-8">
   Gallery
 </div>
 <div class="flex flex-col justify-center items-center py-6">
-  <div id="default-carousel" class="relative w-3/4" data-carousel="slide">
+  <div
+    id="default-carousel"
+    class="relative w-[85%] lg:min-w-[720px]"
+    data-carousel="slide"
+  >
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div
+      class="relative h-72 overflow-hidden rounded-lg md:h-96 lg:min-h-[405px] lg:h-[85vh]"
+    >
       <!-- Item 1 -->
       {
-        images.map((image) => {
+        shuffled.map((image) => {
           return (
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <Image src={image} alt="" />
+              <div class="flex justify-center align-center">
+                <Image src={image} alt="" />
+              </div>
             </div>
           );
         })
@@ -34,7 +87,7 @@ const images = [hands, moon, astronaut];
           return (
             <button
               type="button"
-              class="w-3 h-3 rounded-full"
+              class="w-1 h-1 lg:w-3 lg:h-3 rounded-full"
               aria-current="true"
               aria-label={`Slide ${index + 1}`}
               data-carousel-slide-to={`${index}`}

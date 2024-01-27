@@ -45,6 +45,7 @@ const images = [
   meeting1,
   meeting2,
   meeting3,
+  clothes,
 ];
 let shuffled = images
   .map((value) => ({ value, sort: Math.random() }))
@@ -70,7 +71,7 @@ let shuffled = images
         shuffled.map((image) => {
           return (
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <div class="flex justify-center align-center">
+              <div class="flex justify-center align-middle">
                 <Image src={image} alt="" />
               </div>
             </div>

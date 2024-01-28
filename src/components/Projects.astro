@@ -1,39 +1,25 @@
 ---
 import Card from "@/components/Card.astro";
-import hands from "@/assets/gallery/hands.jpg";
+// images
+import school from "@/assets/gallery/foundationSchool.jpg";
+import munda from "@/assets/gallery/munda1.jpg";
+import camp from "@/assets/gallery/camping.jpg";
+import ekush from "@/assets/gallery/ekush.jpg";
+import tree from "@/assets/gallery/plantation.png";
+import water from "@/assets/gallery/water.png";
 ---
 
+<h1 class="pt-8">Our Projects</h1>
 <section class="flex align-middle justify-center py-16">
   <div class="flex flex-col lg:flex-row justify-around gap-4 gap-y-8 flex-wrap">
+    <Card heading="Nature Camp,Borguna,2022" image={camp} />
+    <Card heading="Community Tree Plantation 2022" image={tree} />
     <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
+      heading="Organizational Workshop Ekushe Porishad 2022"
+      image={ekush}
     />
-    <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
-    />
-    <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
-    />
-    <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
-    />
-    <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
-    />
-    <Card
-      body="Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order."
-      heading="Noteworthy technology acquisitions 2021"
-      image={hands}
-    />
+    <Card heading="Adibashi School project 2023" image={school} />
+    <Card heading="Sanitary latrine & Water Supply 2023" image={water} />
+    <Card heading="Munda Conference 2023" image={munda} />
   </div>
 </section>

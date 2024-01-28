@@ -1,38 +1,19 @@
 ---
-
+import Tabs from "@/components/tabs.astro";
 ---
 
-<style>
-  .box {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    padding-top: 10dvh;
-  }
-</style>
-
-<div class="box">
-  <div class="w-[85%] bg-white rounded-[20px] border-slate-50 border py-[2dvh]">
-    <h1 class="py-[5dvh]">Who Are We</h1>
-    <p class="font-semibold text-justify px-8 pb-[2dvh]">
+<div class="flex lg:flex-row flex-col py-16 px-4">
+  <div class="basis-1/2 p-4">
+    <h1 class="text-blue-600 text-left">Who We Are</h1>
+    <p class="text-2xl text-blue-500">
       The ISC was founded in 2022, as a CSO in Bangladesh. It is established to
       promote
       <strong>
         “A society that values the dignity and freedom of lives on earth”.
       </strong>
-      We work for the most marginalized and vulnerable people that we term as ‘Our
-      Concern Folks’ in short ‘OCF’. Since its inception ISC has done several activities
-      and programs designed to sustainable improvement of the lives and well-being
-      of most marginalized and vulnerable communities in the northern part of Bangladesh.
-      ISC believes sustainable changes happen through the systemic reformation of
-      the society. This reformation is not possible without guaranteeing the changes
-      in the lives of the most vulnerable and marginalized communities. As a development
-      organization ISC focuses on the value of all lives on earth with same dignity
-      and importance, transformational change of people’s social role for social
-      change, balanced interaction between human and flora and fauna for green ecology,
-      priority to native needs and knowledge inclusive sustainable development, develop
-      social leaders with competency based skill for enterprise development, priority
-      to indigenous, disable, gender diverse population and occupational minorities.
     </p>
+  </div>
+  <div class="basis-1/2">
+    <Tabs />
   </div>
 </div>

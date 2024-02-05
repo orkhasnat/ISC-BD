@@ -1,5 +1,6 @@
 ---
-const { head, id } = Astro.props;
+import { Icon } from "astro-icon/components";
+const { head, id, icon } = Astro.props;
 ---
 
 <li class="me-2" role="presentation">
@@ -10,6 +11,7 @@ const { head, id } = Astro.props;
     type="button"
     role="tab"
     aria-controls={id}
-    aria-selected="false">{head}</button
-  >
+    aria-selected="false"
+    ><span> <Icon name={`mdi:${icon}`} class="inline text-xl" /> {head}</span>
+  </button>
 </li>

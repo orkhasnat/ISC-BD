@@ -13,13 +13,22 @@ const ids = ["vision", "mission", "objectives"];
     data-tabs-toggle="#default-tab-content"
     role="tablist"
   >
-    <TabHead head="Vision" id={ids[0]} />
-    <TabHead head="Mission" id={ids[1]} />
-    <TabHead head="Objective" id={ids[2]} />
+    <TabHead head="Vision" id={ids[0]} icon="eye" />
+    <TabHead head="Mission" id={ids[1]} icon="bullseye-arrow" />
+    <TabHead head="Objective" id={ids[2]} icon="stairs-box" />
   </ul>
 </div>
 <div id="default-tab-content">
-  <TabsBody id={ids[0]} para="These are our visions" />
-  <TabsBody id={ids[1]} para="These are our missions" />
-  <TabsBody id={ids[2]} para="These are our objectives" />
+  <TabsBody
+    id={ids[0]}
+    para="A society that values the dignity and freedom of lives on earth."
+  />
+  <TabsBody
+    id={ids[1]}
+    para="Equipped people to take control over their lives and to protect their ecosystem for sustainable development."
+  />
+  <TabsBody
+    id={ids[2]}
+    para="Ensure sustainable and quality life of vulnerable people who are left behind in socio-economic backward situations and well-adjusted interaction with the ecosystem of a given territory."
+  />
 </div>

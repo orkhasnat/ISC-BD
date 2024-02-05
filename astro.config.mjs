@@ -10,7 +10,8 @@ export default defineConfig({
     port: 11654,
     host: "0.0.0.0"
   },
-  site: "https://astro-moon-landing.netlify.app/",
+  site: "https://orkhasnat.github.io",
+  base: "/ISC-BD",
   integrations: [
     tailwind({
       applyBaseStyles: false,

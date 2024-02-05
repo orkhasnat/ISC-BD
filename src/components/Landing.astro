@@ -1,15 +1,42 @@
 ---
+const baseDir = import.meta.env.BASE_URL;
 const text =
   "We envision a society that values the dignity and freedom of lives on earth.";
-// https://dev.to/tilakjain123/create-automatic-background-changer-with-pure-css-1i5
-// also delete jumbotron
+// 🤞
 ---
 
 <style>
-  /*  */
+  #anim {
+    animation-name: loop;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+  }
+  @keyframes loop {
+    0% {
+      background-image: url("/src/assets/cover/winter2.webp");
+    }
+    16% {
+      background-image: url("/src/assets/cover/vera.webp");
+    }
+    33% {
+      background-image: url("/src/assets/cover/people1.webp");
+    }
+    50% {
+      background-image: url("/src/assets/cover/water.webp");
+    }
+    67% {
+      background-image: url("/src/assets/cover/school2.webp");
+    }
+    83% {
+      background-image: url("/src/assets/cover/karam.webp");
+    }
+    100% {
+      background-image: url("/src/assets/cover/winter2.webp");
+    }
+  }
 </style>
-<!-- bg-no-repeat when one image -->
-<section class="bg-center bg-[url('logo.jpeg')] bg-gray-700 bg-blend-multiply">
+<!-- bg-no-repeat when one image ;bg-[url('/ISC-BD/logo.jpeg')] -->
+<section class="bg-center bg-cover bg-gray-700 bg-blend-multiply" id="anim">
   <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
     <h1
       class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-amber-500 md:text-6xl lg:text-8xl"

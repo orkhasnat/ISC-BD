@@ -1,7 +1,6 @@
 ---
 import TabHead from "@/components/tabs_header.astro";
 import TabBody from "@/components/tabs_body.astro";
-import TabsBody from "@/components/tabs_body.astro";
 
 const ids = ["vision", "mission", "objectives"];
 ---
@@ -19,15 +18,15 @@ const ids = ["vision", "mission", "objectives"];
   </ul>
 </div>
 <div id="default-tab-content">
-  <TabsBody
+  <TabBody
     id={ids[0]}
     para="A society that values the dignity and freedom of lives on earth."
   />
-  <TabsBody
+  <TabBody
     id={ids[1]}
     para="Equipped people to take control over their lives and to protect their ecosystem for sustainable development."
   />
-  <TabsBody
+  <TabBody
     id={ids[2]}
     para="Ensure sustainable and quality life of vulnerable people who are left behind in socio-economic backward situations and well-adjusted interaction with the ecosystem of a given territory."
   />

@@ -7,19 +7,47 @@ import camp from "@/assets/gallery/camping.jpg";
 import ekush from "@/assets/gallery/ekush.jpg";
 import tree from "@/assets/gallery/plantation.png";
 import water from "@/assets/gallery/water.png";
+
+const natureH = `On the bank of Bishkhali river in Sadar upazila of Barguna district, a two-days
+  long nature camp was held. This was an environmental conservation activity of ISC's.
+  75 youths from all regions and from all ethnic groups of the country in this nature
+  camp who stayed in the tents do the following,
+  <ul>
+    <li>Garbage cleaning in Bishkhali river bank area.</li>
+    <li>Plantation of trees along various roadsides and fellow lands of Barguna Sadar Upazila.</li>
+      <li>Awareness raising campaign to protect the environment by riverside and local communities including river islands.</li>
+      <li>Distribution of awards among the workers who played a leading role in protecting the environment of the local area.</li>
+  </ul>`;
+const treeH = `Rainfall has decreased significantly in the northwestern part of the country in recent years. Also rainfall patterns variation and delayed monsoon season is also one of the causes of drought in the region. Low rainfall results in groundwater depletion, the level is declining, which is making the situation worse and the suffering of people's livelihood more intense. In this case it is important to develop some adaptation technologies involving limited use of underground water. Planting trees along land, roadsides, ponds and water bodies can reduce the impact of drought. To this purpose looking ahead, ISC planted 2000 saplings in Huzurapur village of Goala union of Sapahar upazila of Naogaon district.
+500 trees also have been planted around polo ground of tigerpass, Chattogram.`;
+const schoolH = `In contrast to the mainstream Bengali population, small ethnographic minority communities in the plains are generally live in isolated and remote areas that lack modern civil opportunities. Children of ethnic minorities are also denied access to modern education and training, among many other deprivations. Poverty, different social and cultural structures, different languages, and geographical distance affect the children of these communities.The main reason is lack of access to modern education and school facilities. A total of 160 children were deprived of education in Mathurapur village under Patnitala upazila of Naogaon district. A primary school has been built on 30 percent of Khas land by ISC, funded by Asha Hoffnung fur Bangladesh e.V. The name of the school is Mathurapur Syed Jamil Hasan Anandamayi Primary School'.`;
+
+const karamH = `Karam is a significant festival for plain land indigenous communities, where it is celebrated with great enthusiasm. The festival is an opportunity for the ethnic to come together and celebrate their culture and traditions. It is also a time to thank the gods for a bountiful harvest and to pray for prosperity and good health.
+On the day of Karam, people go to the forest to collect branches of the Karam tree. These branches are then decorated with flowers and fruits and planted in a central location. People gather around the Karam tree to sing, dance, and pray. They also offer food and drink to the deity. This historic festival has been sponsored by ISC since 2020`;
+const waterH = `Most of the areas of Rajshahi region are prone to drought. This region receives less rainfall than the rest of the country. Tanor, Godagari upazila of Rajshahi district has been the most affected by climate change and drought in recent years. The main causes of drought in the region are; increased long warm days, irregular rainfall. These two are the major reasons of prolong drought in the location. Besides over extraction of the groud water for drinking and irrigation worsening the situation and exacerbating peoples drinking water sources.. ISC has provided drinking water to 37 ethnic minority households in the region by installing water pumps and tanks. Besides, 10 sanitary latrines have been installed for 10 families in this area.`;
+const warmH = `Hardcore poor and ethnic communities minorities of north west of the country suffer difficulties during extreme cold in winter. Among these people ISC distributes warm clothe every year.`;
 ---
 
 <h1 class="pt-8">Our Projects</h1>
 <section class="flex align-middle justify-center py-16">
   <div class="flex flex-col lg:flex-row justify-around gap-4 gap-y-8 flex-wrap">
-    <Card heading="Nature Camp,Borguna,2022" image={camp} />
-    <Card heading="Community Tree Plantation 2022" image={tree} />
+    <Card heading="Nature Camp,Borguna,2022" image={camp} body={natureH} />
+    <Card heading="Community Tree Plantation 2022" image={tree} body={treeH} />
     <Card
       heading="Organizational Workshop Ekushe Porishad 2022"
       image={ekush}
+      body={warmH}
     />
-    <Card heading="Adibashi School project 2023" image={school} />
-    <Card heading="Sanitary latrine & Water Supply 2023" image={water} />
-    <Card heading="Munda Conference 2023" image={munda} />
+    <Card
+      heading="Adibashi School project 2023"
+      image={school}
+      body={schoolH}
+    />
+    <Card
+      heading="Sanitary latrine & Water Supply 2023"
+      image={water}
+      body={waterH}
+    />
+    <Card heading="Munda Conference 2023" image={munda} body={karamH} />
   </div>
 </section>

@@ -6,9 +6,9 @@ const ids = ["vision", "mission", "objectives"];
 ---
 
 <div class="flex flex-row">
-  <div class="mb-4 border-b border-gray-200 dark:border-gray-700 basis-1/5">
+  <div class="border-b border-gray-200 dark:border-gray-700 basis-1/5">
     <ul
-      class="flex flex-wrap -mb-px text-sm font-medium text-center flex-col"
+      class="flex flex-col -mb-px text-sm font-medium text-center"
       id="default-tab"
       data-tabs-toggle="#default-tab-content"
       role="tablist"
@@ -20,7 +20,7 @@ const ids = ["vision", "mission", "objectives"];
   </div>
   <div
     id="default-tab-content"
-    class="basis-4/5 text-sm ml-10 md:text-base md:ml-0"
+    class="basis-4/5 text-sm ml-10 md:text-base md:ml-0 flex"
   >
     <TabBody
       id={ids[0]}

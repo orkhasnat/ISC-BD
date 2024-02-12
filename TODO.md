@@ -1,13 +1,15 @@
 # TODO
 - [x] ~~because of the path /ISC-BD favicon and social media img tags doesnt work.~~ Check this when migrating to different platform.
 
-- [ ] landing page should have gallery ish effect
+- [ ] Apply transitions. maybe add a loader? use [this link](https://svgartista.net/) in the ISC hero
+ 
+- [x] ~~landing page should have gallery ish effect~~
 
-- [ ] landing page also should have slogans one after another
+- [x] ~~landing page also should have slogans one after another~~
 
 - [ ] meet our team section 
 
-- [ ] no f**king clue whats with the animation events
+- [ ] Fix gallery size problem
 
 - [] Develop a CMS system for *Our Projects*
 

@@ -22,13 +22,25 @@ import { Icon } from "astro-icon/components";
     padding: 20px;
     margin-bottom: 1rem;
   }
+  #flip {
+    transition: transform 0.4s ease;
+  }
+  #flip:hover {
+    transform: scale(1.25);
+  }
+  #flip > * {
+    transition: transform 0.4s ease;
+  }
+  #flip:hover > * {
+    transform: rotateY(180deg);
+  }
 </style>
 
 <section class="text-slate-300 font-semibold bg-slate-800">
   <div class="text-center text-cyan-200 ff pt-8">Contact Us</div>
   <div class="flex justify-around flc flex-col lg:flex-row gap-4">
     <div class="py-8">
-      <div class="icon">
+      <div class="icon" id="flip">
         <Icon name="mdi:location" class="text-white text-xl" />
       </div>
       <p class="text-center w-[20ch]">
@@ -38,7 +50,7 @@ import { Icon } from "astro-icon/components";
       </p>
     </div>
     <div class="py-8">
-      <div class="icon">
+      <div class="icon" id="flip">
         <Icon name="mdi:email" class="text-white text-xl" />
       </div>
       <a href="mailto:isc.bd2022@gmail.com" class="block"
@@ -49,7 +61,7 @@ import { Icon } from "astro-icon/components";
       >
     </div>
     <div class="py-8">
-      <div class="icon">
+      <div class="icon" id="flip">
         <Icon name="mdi:phone" class="text-white text-xl" />
       </div>
       <a href="tel:+880-1730011702">+880-1730011702</a>

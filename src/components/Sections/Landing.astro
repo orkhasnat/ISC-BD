@@ -1,70 +1,80 @@
 ---
 // const baseDir = import.meta.env.BASE_URL;
-const text =
-  "We envision a society that values the dignity and freedom of lives on earth.";
 ---
 
 <style>
-  [data-anim] {
-    animation-name: loop;
-    animation-duration: 18s;
-    animation-iteration-count: infinite;
+  .anim {
+    animation: text-focus-in 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
   }
-  @keyframes loop {
+
+  @keyframes text-focus-in {
     0% {
-      background-image: url("/src/assets/cover/winter2.webp");
-    }
-    16% {
-      background-image: url("/src/assets/cover/vera.webp");
-    }
-    33% {
-      background-image: url("/src/assets/cover/people1.webp");
-    }
-    50% {
-      background-image: url("/src/assets/cover/water.webp");
-    }
-    67% {
-      background-image: url("/src/assets/cover/school2.webp");
-    }
-    83% {
-      background-image: url("/src/assets/cover/karam.webp");
+      filter: blur(12px);
+      opacity: 0;
     }
     100% {
-      background-image: url("/src/assets/cover/winter2.webp");
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+  .bg-pan-top {
+    animation: bg-pan-top 3s ease infinite both;
+  }
+  @keyframes bg-pan-top {
+    0% {
+      background-position: 50% 100%;
+    }
+    100% {
+      background-position: 50% 0;
     }
   }
 </style>
 <!-- bg-no-repeat when one image ;bg-[url('/ISC-BD/logo.jpeg')] -->
-<section class="bg-center bg-cover bg-gray-500 bg-blend-multiply" data-anim>
-  <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+<section
+  class="bg-center bg-cover bg-gray-500 bg-blend-multiply bg-pan-top"
+  data-anim
+>
+  <div
+    class="px-4 mx-auto max-w-screen-xl text-center h-screen grid place-content-center"
+  >
     <h1
-      class="mb-4 text-5xl font-extrabold tracking-tight leading-none text-amber-500 md:text-6xl lg:text-8xl"
+      class="mb-4 tracking-tight text-amber-500 md:text-6xl lg:text-7xl pt-24"
     >
       Initiative for Social Change
     </h1>
     <p
       id="data-slogans"
-      class="mb-8 text-lg font-normal text-gray-300 lg:text-3xl sm:px-16 lg:px-48"
+      class="mb-8 text-lg font-normal text-gray-300 lg:text-3xl px-16 lg:px-48"
     >
-      <!-- {text} -->
     </p>
   </div>
 </section>
 <script is:inline>
+  const len = 5;
+  const imgs = ["school2", "people1", "winter2", "vera", "karam"];
   const slogans = [
     "Our school is our joy as we learn in our language",
-    "Saving nature is the saving the love of mother for care",
+    "Saving nature is saving the love of mother for care",
     "Keeping good health is a state of simple awareness",
     "Small climate smart livelihood for our growth and market",
     "Our culture is our pride and identity with unity to others",
   ];
-  const textElement = document.getElementById("data-slogans");
-  const animationElement = document.querySelector("[data-anim]");
+  let i = 0;
+  const pt = document.getElementById("data-slogans");
+  const bgElem = document.querySelector("[data-anim]");
+  const changeHero = () => {
+    pt.innerText = slogans[i];
+    pt.classList.toggle("anim");
+    // bgElem.classList.toggle("bg-pan-top");
 
-  animationElement.addEventListener("animationiteration", () => {
-    let index = 0;
-    textElement.textContent = slogans[index % 5];
-    index += 1;
-    console.log(index);
-  });
+    bgElem.style.backgroundImage = `url("/src/assets/cover/${imgs[i]}.webp")`;
+    i = (i + 1) % len;
+    setTimeout(() => {
+      pt.classList.toggle("anim");
+      // bgElem.classList.toggle("bg-pan-top");
+    }, 2900);
+  };
+
+  changeHero();
+  setInterval(changeHero, 3000);
 </script>

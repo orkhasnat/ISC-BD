@@ -13,5 +13,7 @@
 
 - [] Use a diffrent logo for dark mode. [Help](https://stackoverflow.com/questions/74638826/is-there-a-static-way-to-choose-one-image-or-another-according-to-the-dark-mod)
 
+- [] Make the logo in the middle
+
 # Checklist for Migration
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL.

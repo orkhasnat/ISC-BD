@@ -3,9 +3,9 @@ import { Icon } from "astro-icon/components";
 const { head, id, icon } = Astro.props;
 ---
 
-<li class="me-2" role="presentation">
+<li role="presentation">
   <button
-    class="inline-block p-4 border-b-2 rounded-t-lg"
+    class="inline-block p-4 border-l-2 lg:border-b-2 lg:border-l-0"
     id={`${id}-tab`}
     data-tabs-target={`#${id}`}
     type="button"

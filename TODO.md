@@ -11,5 +11,7 @@
 
 - [] Develop a CMS system for *Our Projects*
 
+- [] Use a diffrent logo for dark mode. [Help](https://stackoverflow.com/questions/74638826/is-there-a-static-way-to-choose-one-image-or-another-according-to-the-dark-mod)
+
 # Checklist for Migration
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL.

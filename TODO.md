@@ -7,5 +7,9 @@
 
 - [ ] meet our team section 
 
+- [ ] no f**king clue whats with the animation events
+
+- [] Develop a CMS system for *Our Projects*
+
 # Checklist for Migration
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL.

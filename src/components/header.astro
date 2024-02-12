@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
-import HeaderLink from "../components/headerlink.astro";
-import HeaderLinkSmall from "../components/headerlink-small.astro";
-import logo from "../icons/Logo2.svg";
+import HeaderLink from "./helper/headerlink.astro";
+import HeaderLinkSmall from "./helper/headerlink-small.astro";
+// import logo from "../assets/Logo2.svg";
+import logo from "../assets/logo.jpeg";
 ---
 
 <style>
@@ -19,7 +20,7 @@ import logo from "../icons/Logo2.svg";
     <nav class="flex items-center justify-between h-16 lg:h-20">
       <div class="flex-shrink-0">
         <a href="#" title="" class="flex">
-          <Image class="w-auto h-8 lg:h-10" src={logo} alt="" />
+          <Image class="w-auto h-12 lg:h-16" src={logo} alt="" />
         </a>
       </div>
 

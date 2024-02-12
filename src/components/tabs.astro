@@ -5,29 +5,31 @@ import TabBody from "@/components/helper/tabs_body.astro";
 const ids = ["vision", "mission", "objectives"];
 ---
 
-<div class="mb-4 border-b border-gray-200 dark:border-gray-700">
-  <ul
-    class="flex flex-wrap -mb-px text-sm font-medium text-center"
-    id="default-tab"
-    data-tabs-toggle="#default-tab-content"
-    role="tablist"
-  >
-    <TabHead head="Vision" id={ids[0]} icon="eye" />
-    <TabHead head="Mission" id={ids[1]} icon="bullseye-arrow" />
-    <TabHead head="Objective" id={ids[2]} icon="stairs-box" />
-  </ul>
-</div>
-<div id="default-tab-content">
-  <TabBody
-    id={ids[0]}
-    para="A society that values the dignity and freedom of lives on earth."
-  />
-  <TabBody
-    id={ids[1]}
-    para="Equipped people to take control over their lives and to protect their ecosystem for sustainable development."
-  />
-  <TabBody
-    id={ids[2]}
-    para="Ensure sustainable and quality life of vulnerable people who are left behind in socio-economic backward situations and well-adjusted interaction with the ecosystem of a given territory."
-  />
+<div class="flex flex-row">
+  <div class="mb-4 border-b border-gray-200 dark:border-gray-700 basis-1/5">
+    <ul
+      class="flex flex-wrap -mb-px text-sm font-medium text-center flex-col"
+      id="default-tab"
+      data-tabs-toggle="#default-tab-content"
+      role="tablist"
+    >
+      <TabHead head="Vision" id={ids[0]} icon="eye" />
+      <TabHead head="Mission" id={ids[1]} icon="bullseye-arrow" />
+      <TabHead head="Objective" id={ids[2]} icon="stairs-box" />
+    </ul>
+  </div>
+  <div id="default-tab-content" class="basis-4/5">
+    <TabBody
+      id={ids[0]}
+      para="A society that values the dignity and freedom of lives on earth."
+    />
+    <TabBody
+      id={ids[1]}
+      para="Equipped people to take control over their lives and to protect their ecosystem for sustainable development."
+    />
+    <TabBody
+      id={ids[2]}
+      para="Ensure sustainable and quality life of vulnerable people who are left behind in socio-economic backward situations and well-adjusted interaction with the ecosystem of a given territory."
+    />
+  </div>
 </div>

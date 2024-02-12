@@ -15,5 +15,7 @@
 
 - [] Make the logo in the middle
 
+- [] Optimize images; delete unnecessary ones.
+
 # Checklist for Migration
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL.

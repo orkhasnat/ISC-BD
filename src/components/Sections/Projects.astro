@@ -1,12 +1,12 @@
 ---
 import Card from "@/components/Card.astro";
 // images
-import school from "@/assets/gallery/foundationSchool.jpg";
-import munda from "@/assets/gallery/munda1.jpg";
-import camp from "@/assets/gallery/camping.jpg";
-import clothes from "@/assets/gallery/distibutionsOfWinterClothes.jpg";
-import tree from "@/assets/gallery/plantation.png";
-import water from "@/assets/gallery/water.png";
+import school from "@/assets/project/Education.png";
+import karam from "@/assets/project/Karam.png";
+import camp from "@/assets/project/NatureCamp.png";
+import clothes from "@/assets/project/WarmClothesDistribution.png";
+import tree from "@/assets/project/TreePlantation.png";
+import water from "@/assets/project/WaterSanitation.png";
 
 const natureH = `On the bank of Bishkhali river in Sadar upazila of Barguna district, a two-days
   long nature camp was held. This was an environmental conservation activity of ISC's.
@@ -38,14 +38,19 @@ const cutOffLength = 100;
 <section class="flex align-middle justify-center py-16">
   <div class="flex flex-col lg:flex-row justify-around gap-4 gap-y-8 flex-wrap">
     <Card
-      heading="Nature Camp,Borguna,2022"
+      heading="Adibashi School Project"
+      image={school}
+      body={schoolH.slice(0, cutOffLength) + "..."}
+    />
+    <Card
+      heading="Nature Camp, Borguna"
       image={camp}
       body={natureH.slice(0, cutOffLength) + "..."}
     />
     <Card
-      heading="Community Tree Plantation 2022"
-      image={tree}
-      body={treeH.slice(0, cutOffLength) + "..."}
+      heading="Sanitary Latrine & Water Supply"
+      image={water}
+      body={waterH.slice(0, cutOffLength) + "..."}
     />
     <Card
       heading="Warm Clothes Distribution in the North-West"
@@ -53,18 +58,13 @@ const cutOffLength = 100;
       body={warmH.slice(0, cutOffLength) + "..."}
     />
     <Card
-      heading="Adibashi School project 2023"
-      image={school}
-      body={schoolH.slice(0, cutOffLength) + "..."}
+      heading="Community Tree Plantation"
+      image={tree}
+      body={treeH.slice(0, cutOffLength) + "..."}
     />
     <Card
-      heading="Sanitary latrine & Water Supply 2023"
-      image={water}
-      body={waterH.slice(0, cutOffLength) + "..."}
-    />
-    <Card
-      heading="Munda Conference 2023"
-      image={munda}
+      heading="Karam Festival"
+      image={karam}
       body={karamH.slice(0, cutOffLength) + "..."}
     />
   </div>

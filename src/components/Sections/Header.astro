@@ -2,16 +2,16 @@
 import { Image } from "astro:assets";
 import HeaderLink from "@/components/helper/headerlink.astro";
 import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
-// import logo from "../assets/Logo2.svg";
-import logo from "@/assets/logo.webp";
+const base = import.meta.env.BASE_URL;
+// import logo from "@/assets/logo.webp";
 ---
 
 <style>
-  .m_fade {
+  /* .m_fade {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s linear 300ms;
-  }
+  } */
 </style>
 
 <header class="pb-6 bg-white lg:pb-0 fixed w-[100%] top-0 z-50">
@@ -20,7 +20,7 @@ import logo from "@/assets/logo.webp";
     <nav class="flex items-center justify-between h-16 lg:h-20">
       <div class="flex-shrink-0">
         <a href="#" title="" class="flex">
-          <Image class="w-auto h-12 lg:h-16" src={logo} alt="" />
+          <img class="w-auto h-12 lg:h-16" src=`${base}/logo.webp` alt="" />
         </a>
       </div>
 

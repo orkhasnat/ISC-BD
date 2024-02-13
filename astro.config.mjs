@@ -16,6 +16,5 @@ export default defineConfig({
     tailwind({
       applyBaseStyles: false,
     }),
-    icon(),
-    react()]
+    icon()]
 });

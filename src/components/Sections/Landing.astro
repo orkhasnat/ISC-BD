@@ -68,7 +68,7 @@
     pt.classList.toggle("anim");
     // bgElem.classList.toggle("bg-pan-top");
 
-    bgElem.style.backgroundImage = `url("ISC-BD/cover/${imgs[i]}.webp")`; // why basedir is not working??
+    bgElem.style.backgroundImage = `url("/cover/${imgs[i]}.webp")`; // why basedir is not working??
     i = (i + 1) % len;
     setTimeout(() => {
       pt.classList.toggle("anim");

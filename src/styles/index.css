@@ -78,10 +78,11 @@
 
 * {
   min-width: 0;
-  font-family: 'Roboto Slab', sans-serif;
+  font-family: "Poppins", "Fredoka One", sans-serif;
 }
 
 h1 {
+  font-family: "Inter Variable", sans-serif;
   font-weight: 800;
   /* font-size: 2.25rem;
   line-height: 2.5rem; */

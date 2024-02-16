@@ -9,7 +9,7 @@
 
 - [x] ~~landing page also should have slogans one after another~~
 
-- [] Check if social media image is working
+- [x] Check if social media image is working
 
 - [ ] meet our team section 
 
@@ -17,9 +17,9 @@
 
 - [ ] Develop a CMS system for *Our Projects*
 
-- [ ] Use a diffrent logo for dark mode. [Help](https://stackoverflow.com/questions/74638826/is-there-a-static-way-to-choose-one-image-or-another-according-to-the-dark-mod)
+- [x] ~~Use a diffrent logo for dark mode.~~
 
-- [ ] Make the logo in the middle
+- [x] Make the logo in the middle
 
 - [ ] Optimize images; delete unnecessary ones.
 

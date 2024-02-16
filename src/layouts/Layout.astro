@@ -5,12 +5,13 @@ import "@fontsource/arvo";
 import "@fontsource/fredoka-one";
 import "@fontsource/aleo";
 import "@fontsource/abril-fatface";
+
 import "flowbite";
-import Loader from "@/components/loader.astro";
+import "@/styles/index.css";
+
 import Footer from "@/components/Sections/Footer.astro";
 import Header from "@/components/Sections/Header.astro";
-import "@/styles/index.css";
-import Location from "@/components/Location.astro";
+// import Loader from "@/components/loader.astro";
 
 const site = Astro.site.toString().slice(0, -1);
 const base = import.meta.env.BASE_URL;
@@ -62,16 +63,15 @@ const SiteDescription =
 		<meta property="og:image" content={socialMetaImage} />
 		<meta property="og:url" content={site + base} />
 		<meta name="twitter:card" content="summary_large_image" />
-		<!-- <script></script> -->
-		<script is:inline>
+		<!-- <script is:inline>
 			window.onload = function () {
 				document.getElementById("loading").style.display = "none";
 			};
-		</script>
+		</script> -->
 	</head>
-	<div id="loading">
+	<!-- <div id="loading">
 		<Loader />
-	</div>
+	</div> -->
 	<body class="h-full overflow-x-hidden text-base">
 		<Header />
 		<main>
@@ -80,6 +80,4 @@ const SiteDescription =
 		<Footer />
 		<script src="node_modules/flowbite/dist/flowbite.min.js"></script>
 	</body>
-
-
 </html>

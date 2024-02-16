@@ -19,13 +19,15 @@
 
 - [x] ~~Use a diffrent logo for dark mode.~~
 
-- [x] Make the logo in the middle
+- [x] ~~Make the logo in the middle~~
 
 - [ ] Optimize images; delete unnecessary ones.
 
-- [ ] Maybe add a spinner loader to load the images.
+- [ ] Maybe add a spinner loader on each image load.
 
 - [ ] Landing ISC animation slide-in/typewriter effect.
+
+- [x] ~~Padding-x on mobile platforms.~~
 
 # Checklist for Migration
 

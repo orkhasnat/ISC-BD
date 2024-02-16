@@ -18,7 +18,7 @@
     }
   }
   .bg-pan-top {
-    animation: bg-pan-top 3s ease infinite both;
+    animation: bg-pan-top 6s ease infinite both;
   }
   @keyframes bg-pan-top {
     0% {
@@ -50,12 +50,15 @@
   </div>
 </section>
 <script is:inline>
-  const len = 5;
-  const imgs = ["school2", "people1", "winter2", "vera", "karam"];
+  const time = 6000;
+  const len = 6;
+  const imgs = ["collage", "school2", "water", "winter2", "vera", "karam"];
   const slogans = [
+    "",
     "Our school is our joy as we learn in our language",
-    "Saving nature is saving the love of mother for care",
+    // "Saving nature is saving the love of mother for care",
     "Keeping good health is a state of simple awareness",
+    "Sharing warmth, one cloth at a time",
     "Small climate smart livelihood for our growth and market",
     "Our culture is our pride and identity with unity to others",
   ];
@@ -72,9 +75,9 @@
     setTimeout(() => {
       pt.classList.toggle("anim");
       // bgElem.classList.toggle("bg-pan-top");
-    }, 2900);
+    }, time - 100);
   };
 
   changeHero();
-  setInterval(changeHero, 3000);
+  setInterval(changeHero, time);
 </script>

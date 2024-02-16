@@ -25,6 +25,8 @@
 
 - [ ] Maybe add a spinner loader to load the images.
 
+- [ ] Landing ISC animation slide-in/typewriter effect.
+
 # Checklist for Migration
 
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL or not.

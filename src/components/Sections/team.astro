@@ -11,7 +11,7 @@ import anik from "@/assets/team/anik.jpg";
 const anikN = "Anik Asad";
 const anikT = "Executive Director";
 const anikD =
-  "An Anthropologist and Human Rights Activist. Over the decades working for the advancement of the most marginalized people in Bangladesh. Experienced in senior management as a team leader in different national & international organizations such as HEKS, Oxfam, Tere Des Home (Netherlands), ILO, UNFPA, CCDB. Now leading ISC as founder ED and as team leader";
+  "An Anthropologist and Human Rights Activist. Over the decades working for the advancement of the most marginalized people in Bangladesh. Experienced in senior management as a team leader in different national & international organizations such as HEKS, Oxfam, Tere Des Home (Netherlands), ILO, UNFPA, CCDB. Now leading ISC as founder ED and as team leader.";
 
 import hasnat from "@/assets/team/hasnat.jpg";
 const hasnatN = "Abul Hasnat";
@@ -26,9 +26,43 @@ const moniD =
   "Champion in documentation and monitoring with several years of experiences in the same field. Capacity proves her skill in designing a M & E systems for the office and project, data collection systems and approaches, data collection & analysis, highlighting potential issues, prepare monthly reports, donor reports, situation report and so forth. From the very beginning with ISC she is assisting the programme department with devotion.";
 ---
 
-<section class="flex flex-col lg:flex-row">
-  <Blop />
-  <Blop />
-  <Blop />
-  <Blop />
+<h1 class="py-12">Meet Our Team</h1>
+<section
+  class="pb-12 flex jsutify-around flex-wrap gap-y-8 flex-col lg:flex-row"
+>
+  <Blop
+    name={anikN}
+    img={anik}
+    title={anikT}
+    align="right"
+    des={anikD}
+    id="anik"
+  />
+
+  <Blop
+    name={hasnatN}
+    img={hasnat}
+    title={hasnatT}
+    align="left"
+    des={hasnatD}
+    id="hasnat"
+  />
+
+  <Blop
+    name={moniN}
+    img={moni}
+    title={moniT}
+    align="right"
+    des={moniD}
+    id="moni"
+  />
+
+  <Blop
+    name={zohirN}
+    img={zohir}
+    title={zohirT}
+    align="left"
+    des={zohirD}
+    id="zohir"
+  />
 </section>

@@ -11,7 +11,7 @@
 
 - [x] Check if social media image is working
 
-- [ ] meet our team section 
+- [x] ~~meet our team section~~ Check if the pop over alignment issue arises in smallest media
 
 - [ ] Fix gallery size problem
 

@@ -1,0 +1,19 @@
+---
+const { id, poptext } = Astro.props;
+
+// popover gen item should have these three attrs
+// data-popover-target={id}
+// data-popover-placement="right"
+// data-popover-trigger="hover"
+// data-popover-offset="offset" eg. 3 not 3px nor 3rem
+---
+
+<div
+  data-popover
+  id={id}
+  role="tooltip"
+  class="absolute z-10 inline-block invisible opacity-0 shadow-sm bg-orange-200 border-4 border-orange-50 rounded-lg transition-opacity duration-300 text-xs w-40 md:text-sm md:w-64"
+>
+  <p class="px-3 py-2 text-center text-gray-700 font-semibold">{poptext}</p>
+  <div data-popover-arrow></div>
+</div>

@@ -14,9 +14,10 @@ import Header from "@/components/Sections/Header.astro";
 // import Loader from "@/components/loader.astro";
 
 const site = Astro.site.toString().slice(0, -1);
-const base = import.meta.env.BASE_URL;
+// const base = import.meta.env.BASE_URL; // not needed for custom domain
+// const socialMetaImage = site + base + "/" + "logo.webp"; // not needed for custom domain
 // const socialMetaImage = new URL("logo.jpeg", Astro.site);
-const socialMetaImage = site + base + "/" + "logo.webp";
+const socialMetaImage = site + "/logo.webp";
 const { pageTitle } = Astro.props;
 const SiteDescription =
 	"Initiative for Social Change Bangladesh. Working to create a society that values the dignity and freedom of lives on earth";
@@ -51,7 +52,10 @@ const SiteDescription =
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" />
+		{
+			/* <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" /> // not needed for custom domain */
+		}
+		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={SiteDescription} />
 		<title>{pageTitle}</title>
@@ -61,7 +65,10 @@ const SiteDescription =
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content={SiteDescription} />
 		<meta property="og:image" content={socialMetaImage} />
-		<meta property="og:url" content={site + base} />
+		{
+			/*<meta property="og:url" content={site + base} /> // not needed for custom domain */
+		}
+		<meta property="og:url" content={site} />
 		<meta name="twitter:card" content="summary_large_image" />
 		<!-- <script is:inline>
 			window.onload = function () {

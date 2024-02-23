@@ -8,8 +8,9 @@ export default defineConfig({
     port: 11654,
     host: "0.0.0.0"
   },
-  site: "https://orkhasnat.github.io",
-  base: "/ISC-BD",
+  // site: "https://orkhasnat.github.io",
+  site: "https://www.iscbd.org",
+  // base: "/ISC-BD",
   integrations: [
     tailwind({
       applyBaseStyles: false,

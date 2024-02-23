@@ -33,4 +33,4 @@
 
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL or not.
 
-- [ ] in Landing.astro there is a hard coded base value. For some reason the base import is not working I dont know why. 
+- [x] ~~in Landing.astro there is a hard coded base value.~~ ~~For some reason the base import is not working I dont know why.~~ ***For custom domain the base has been removed***

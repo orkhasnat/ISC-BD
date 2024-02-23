@@ -1,7 +1,7 @@
 ---
 import HeaderLink from "@/components/helper/headerlink.astro";
 import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
-const base = import.meta.env.BASE_URL;
+// const base = import.meta.env.BASE_URL; // not needed for custom domain
 // import logo from "@/assets/logo.webp";
 ---
 
@@ -32,19 +32,16 @@ const base = import.meta.env.BASE_URL;
     <nav class="flex items-center justify-between h-16 lg:h-20">
       <div class="flex-shrink-0">
         <a href="#" title="" class="flex">
-          <img
-            class="w-auto h-14 only-on-light"
-            src=`${base}/logo.webp`
-            alt="logo"
-          />
+          <img class="w-auto h-14 only-on-light" src="/logo.webp" alt="logo" />
+          {/* src=`${base}/logo.webp` // not needed for custom domain */}
           <img
             class="w-auto h-[5rem] only-on-dark"
-            src=`${base}/logoDark.webp`
+            src="/logoDark.webp"
             alt="logo"
           />
+          {/* src=`${base}/logoDark.webp` // not needed for custom domain */}
         </a>
       </div>
-
       <button
         type="button"
         class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
@@ -120,4 +117,5 @@ const base = import.meta.env.BASE_URL;
     menu.classList.toggle("hidden");
     close.classList.toggle("hidden");
   });
-</script>
+</script>} />
+

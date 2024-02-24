@@ -2,10 +2,17 @@
 const { href, name } = Astro.props;
 ---
 
+<style>
+  @media (prefers-color-scheme: dark) {
+    .dark {
+      color: white;
+    }
+  }
+</style>
 <a
   href={href ? href : "#"}
   title=""
-  class="inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
+  class="dark inline-flex py-2 text-base font-medium text-black transition-all duration-200 hover:text-blue-600 focus:text-blue-600"
 >
   {name}
 </a>

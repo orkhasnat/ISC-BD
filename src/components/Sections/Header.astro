@@ -14,6 +14,10 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
   .only-on-dark {
     display: none;
   }
+  .dark {
+    background-color: white;
+    color: black;
+  }
 
   @media (prefers-color-scheme: dark) {
     .only-on-dark {
@@ -23,10 +27,14 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
     .only-on-light {
       display: none;
     }
+    .dark {
+      background-color: black;
+      color: white;
+    }
   }
 </style>
 
-<header class="pb-6 bg-white lg:pb-0 fixed w-[100%] top-0 z-50">
+<header class="dark pb-2 bg-white fixed w-[100%] top-0 z-50">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- lg+ -->
     <nav class="flex items-center justify-between h-16 lg:h-20">
@@ -44,7 +52,7 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
       </div>
       <button
         type="button"
-        class="inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+        class="dark inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
         id="data-button"
       >
         <!-- Menu open: "hidden", Menu closed: "block" -->
@@ -91,10 +99,10 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
     <!-- xs to lg -->
     <nav
       id="data-header"
-      class="pt-4 pb-6 bg-white border border-gray-200 rounded-md shadow-md hidden"
+      class="dark mt-2 mb-1 bg-white border border-gray-200 rounded-md shadow-md hidden"
     >
       <div class="flow-root">
-        <div class="flex flex-col px-6 -my-2 space-y-1">
+        <div class="flex flex-col px-6 space-y-1">
           <HeaderLinkSmall name="About Us" href="#link-about" />
           <HeaderLinkSmall name="Projects" href="#link-projects" />
           <HeaderLinkSmall name="Gallery" href="#link-gallery" />
@@ -117,5 +125,4 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
     menu.classList.toggle("hidden");
     close.classList.toggle("hidden");
   });
-</script>} />
-
+</script>

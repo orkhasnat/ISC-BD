@@ -24,12 +24,41 @@ const moniN = "Sabikun Nahar";
 const moniT = " Monitoring and Documentation Officer";
 const moniD =
   "Champion in documentation and monitoring with several years of experiences in the same field. Capacity proves her skill in designing a M & E systems for the office and project, data collection systems and approaches, data collection & analysis, highlighting potential issues, prepare monthly reports, donor reports, situation report and so forth. From the very beginning with ISC she is assisting the programme department with devotion.";
+
+import bari from "@/assets/team/bari.jpg";
+const bariN = "D.M Abdul Bari";
+const bariT = "Chairperson";
+const bariD =
+  "Advocate and Founder President of Ekushe Parishod, Naogaon, Mr. Bari is a renowned social reformer in Naogaon district restlessly working for the development of marginalized people. He has formed many social organizations in Naogaon.";
+
+import sidd from "@/assets/team/sid.jpg";
+const siddN = "Dr. Siddiqur Rahman";
+const siddT = "Treasurer";
+const siddD =
+  "Professor of Anthropology at Jahangirnagar University, Mr. Rahman is quite famous researcher in the field of Anthropology. He has published several international journals on anthropological research and leading many projects on indigenous people and climate change.";
 ---
 
 <h1 class="py-12">Meet Our Team</h1>
 <section
   class="pb-12 flex jsutify-around flex-wrap gap-y-8 flex-col lg:flex-row"
 >
+  <Blop
+    name={bariN}
+    img={bari}
+    title={bariT}
+    align="right"
+    des={bariD}
+    id="bari"
+  />
+  <Blop
+    name={siddN}
+    img={sidd}
+    title={siddT}
+    align="left"
+    des={siddD}
+    id="sidd"
+  />
+
   <Blop
     name={anikN}
     img={anik}

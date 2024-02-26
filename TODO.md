@@ -9,11 +9,11 @@
 
 - [x] ~~landing page also should have slogans one after another~~
 
-- [x] Check if social media image is working
+- [x] ~~Check if social media image is working~~
 
-- [x] ~~meet our team section~~ Check if the pop over alignment issue arises in smallest media
+- [x] ~~meet our team section~~ ~~Check if the pop over alignment issue arises in smallest media~~ Fixed for now?
 
-- [ ] Fix gallery size problem
+- [x] ~~Fix gallery size problem~~
 
 - [ ] Develop a CMS system for *Our Projects*
 
@@ -21,7 +21,7 @@
 
 - [x] ~~Make the logo in the middle~~
 
-- [ ] Optimize images; delete unnecessary ones.
+- [x] ~~Optimize images; delete unnecessary ones.~~ Maybe its done?
 
 - [ ] Maybe add a spinner loader on each image load.
 

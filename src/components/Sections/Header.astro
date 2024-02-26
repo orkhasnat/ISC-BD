@@ -34,7 +34,7 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
   }
 </style>
 
-<header class="dark pb-2 bg-white fixed w-[100%] top-0 z-50">
+<header class="dark pb-2 fixed top-0 z-50 w-full">
   <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
     <!-- lg+ -->
     <nav class="flex items-center justify-between h-16 lg:h-20">
@@ -52,7 +52,7 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
       </div>
       <button
         type="button"
-        class="dark inline-flex p-2 text-black transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
+        class="dark inline-flex p-2 transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
         id="data-button"
       >
         <!-- Menu open: "hidden", Menu closed: "block" -->
@@ -99,7 +99,7 @@ import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
     <!-- xs to lg -->
     <nav
       id="data-header"
-      class="dark mt-2 mb-1 bg-white border border-gray-200 rounded-md shadow-md hidden"
+      class="dark mt-2 mb-1 border border-gray-200 rounded-md shadow-md hidden"
     >
       <div class="flow-root">
         <div class="flex flex-col px-6 space-y-1">

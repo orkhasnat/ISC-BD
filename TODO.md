@@ -15,7 +15,7 @@
 
 - [x] ~~Fix gallery size problem~~
 
-- [ ] Develop a CMS system for *Our Projects*
+- [x] ~~Develop a CMS system for *Our Projects*~~ Not exactly what you call a cms!
 
 - [x] ~~Use a diffrent logo for dark mode.~~
 

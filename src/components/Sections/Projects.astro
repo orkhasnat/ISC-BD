@@ -1,5 +1,5 @@
 ---
-import Card from "@/components/Card.astro";
+import Card from "@/components/helper/Card.astro";
 // images
 import school from "@/assets/project/Education.webp";
 import karam from "@/assets/project/Karam.webp";
@@ -41,31 +41,37 @@ const cutOffLength = 100;
       heading="Adibashi School Project"
       image={school}
       body={schoolH.slice(0, cutOffLength) + "..."}
+      link="/projects/school/"
     />
     <Card
       heading="Nature Camp, Borguna"
       image={camp}
       body={natureH.slice(0, cutOffLength) + "..."}
+      link="/projects/camp/"
     />
     <Card
       heading="Sanitary Latrine & Water Supply"
       image={water}
       body={waterH.slice(0, cutOffLength) + "..."}
+      link="/projects/water/"
     />
     <Card
       heading="Warm Clothes Distribution in the North-West"
       image={clothes}
       body={warmH.slice(0, cutOffLength) + "..."}
+      link="/projects/warm/"
     />
     <Card
       heading="Community Tree Plantation"
       image={tree}
       body={treeH.slice(0, cutOffLength) + "..."}
+      link="/projects/tree/"
     />
     <Card
       heading="Karam Festival"
       image={karam}
       body={karamH.slice(0, cutOffLength) + "..."}
+      link="/projects/karam/"
     />
   </div>
 </section>

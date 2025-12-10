@@ -25,6 +25,7 @@ const { Content } = await entry.render();
             alt={entry.data.title} 
             class="absolute inset-0 w-full h-full object-cover filter brightness-50"
             transition:name={`image-${entry.slug}`}
+            loading="eager"
         />
         <div class="absolute inset-0 flex items-center justify-center p-4">
             <div class="text-center text-white max-w-4xl mx-auto animate-fade-in">

@@ -22,9 +22,10 @@ const shuffled = images
         <div class="break-inside-avoid overflow-hidden rounded-xl bg-muted">
            <Image 
             src={img.default} 
-            alt="Gallery Image" 
+            alt="Gallery" 
             class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
             width={600}
+            loading="lazy"
            />
         </div>
       ))}

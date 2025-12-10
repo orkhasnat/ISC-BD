@@ -23,6 +23,7 @@ const cutOffLength = 100;
                     image={project.data.coverImage}
                     body={project.data.description}
                     link={`/projects/${project.slug}/`}
+                    loading="eager"
                 />
             ))}
         </div>

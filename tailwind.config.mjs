@@ -12,28 +12,27 @@ export default {
     },
     extend: {
       colors: {
-        // Nature/Paper/NGO inspired palette
         primary: {
-          DEFAULT: "#2c5f2d", // Forest Green
+          DEFAULT: "#3f612d", 
           foreground: "#ffffff",
         },
         secondary: {
-          DEFAULT: "#975a16", // Earthy Clay
+          DEFAULT: "#ad8a64", 
           foreground: "#ffffff",
         },
-        background: "#Fdfbf7", // Warm Paper
-        foreground: "#1c1917", // Warm Black (Stone 900)
+        background: "#fffcf7", 
+        foreground: "#2b2d42", 
         muted: {
-          DEFAULT: "#e6e2dd", // Recycled paper look
-          foreground: "#57534e", // Stone 600
+          DEFAULT: "#e6e2dd", 
+          foreground: "#57534e", 
         },
         accent: {
-          DEFAULT: "#f0fdf4", // Green 50
-          foreground: "#166534", // Green 700
+          DEFAULT: "#f0fdf4", 
+          foreground: "#166534", 
         },
-        border: "#d6d3d1", // Stone 300
+        border: "#d6d3d1", 
         input: "#d6d3d1",
-        ring: "#2c5f2d",
+        ring: "#3f612d",
       },
       borderRadius: {
         lg: "0.5rem",

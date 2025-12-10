@@ -34,3 +34,13 @@
 - [ ] in layout.astro check site and base vars. If they are pointing to the correct URL or not.
 
 - [x] ~~in Landing.astro there is a hard coded base value.~~ ~~For some reason the base import is not working I dont know why.~~ ***For custom domain the base has been removed***
+
+
+--- 
+# V2 TODO
+
+- [ ] Refactor the Team.astro page
+- [ ] The bg page should have a paper like feel, a warm tone and the primary color should be a warm green (faded)
+- [ ] the logo needs to be revamped
+- [ ] a dark mode toggle switch should be there or should it follow the device specific settings?
+

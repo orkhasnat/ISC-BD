@@ -44,6 +44,62 @@ export default {
         heading: ['"Merriweather"', 'serif'],
         body: ['"Lato"', 'sans-serif'],
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: 'none',
+            color: theme("colors.foreground"),
+            fontFamily: theme("fontFamily.body"),
+            p: {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+              lineHeight: '1.75',
+              fontSize: '1.125rem', // lg
+            },
+            'h1, h2, h3, h4': {
+              color: theme("colors.primary.DEFAULT"),
+              fontFamily: theme("fontFamily.heading"),
+              fontWeight: '700',
+            },
+            a: {
+              color: theme("colors.primary.DEFAULT"),
+              '&:hover': {
+                color: theme("colors.primary.foreground"),
+                backgroundColor: theme("colors.primary.DEFAULT"),
+                textDecoration: 'none',
+              },
+              borderRadius: '0.25rem',
+              padding: '0 0.25rem',
+              transition: 'all 0.2s',
+            },
+            'ul > li::marker': {
+              color: theme("colors.secondary.DEFAULT"),
+            },
+            'ol > li::marker': {
+              color: theme("colors.secondary.DEFAULT"),
+              fontWeight: '600',
+            },
+            blockquote: {
+              borderLeftColor: theme("colors.secondary.DEFAULT"),
+              color: theme("colors.muted.foreground"),
+              fontStyle: 'italic',
+            },
+            code: {
+              color: theme("colors.secondary.DEFAULT"),
+              backgroundColor: theme("colors.muted.DEFAULT"),
+              padding: '0.2em 0.4em',
+              borderRadius: '0.25rem',
+              fontWeight: '600',
+            },
+            'code::before': {
+              content: '""'
+            },
+            'code::after': {
+              content: '""'
+            }
+          },
+        },
+      }),
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -65,5 +121,5 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 }

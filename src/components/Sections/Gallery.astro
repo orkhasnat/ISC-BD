@@ -1,160 +1,37 @@
 ---
 import { Image } from "astro:assets";
-// Image Imports
-import pic1 from "@/assets/gallery/1.webp";
-import pic2 from "@/assets/gallery/2.webp";
-import pic3 from "@/assets/gallery/3.webp";
-import pic4 from "@/assets/gallery/4.webp";
-import pic5 from "@/assets/gallery/5.webp";
-import pic6 from "@/assets/gallery/6.webp";
-import pic7 from "@/assets/gallery/7.webp";
-import pic8 from "@/assets/gallery/8.webp";
-import pic9 from "@/assets/gallery/9.webp";
-import pic10 from "@/assets/gallery/10.webp";
-import pic11 from "@/assets/gallery/11.webp";
-import pic12 from "@/assets/gallery/12.webp";
-import pic13 from "@/assets/gallery/13.webp";
-import pic14 from "@/assets/gallery/14.webp";
-import pic15 from "@/assets/gallery/15.webp";
-import pic16 from "@/assets/gallery/16.webp";
-import pic17 from "@/assets/gallery/17.webp";
-import pic18 from "@/assets/gallery/18.webp";
-import pic19 from "@/assets/gallery/19.webp";
-import pic20 from "@/assets/gallery/20.webp";
-import pic21 from "@/assets/gallery/21.webp";
-import pic22 from "@/assets/gallery/22.webp";
-import pic23 from "@/assets/gallery/23.webp";
-import pic24 from "@/assets/gallery/24.webp";
-import pic25 from "@/assets/gallery/25.webp";
-import pic26 from "@/assets/gallery/26.webp";
-const images = [
-  pic1,
-  pic2,
-  pic3,
-  pic4,
-  pic5,
-  pic6,
-  pic7,
-  pic8,
-  pic9,
-  pic10,
-  pic11,
-  pic12,
-  pic13,
-  pic14,
-  pic15,
-  pic16,
-  pic17,
-  pic18,
-  pic19,
-  pic20,
-  pic21,
-  pic22,
-  pic23,
-  pic24,
-  pic25,
-  pic26,
-];
-let shuffled = images
+// Import all gallery images using import.meta.glob (eager load for static build)
+const images = Object.values(import.meta.glob<{ default: ImageMetadata }>("@/assets/gallery/*.webp", { eager: true }));
+
+// Shuffle images for randomness
+const shuffled = images
   .map((value) => ({ value, sort: Math.random() }))
   .sort((a, b) => a.sort - b.sort)
   .map(({ value }) => value);
 ---
 
-<!-- <div class="flex justify-center align-middle text-5xl font-extrabold py-4 pt-8">
-  Gallery
-</div> -->
-<h1 class="py-4 pt-8">Gallery</h1>
-<div class="flex flex-col justify-center items-center py-6">
-  <div
-    id="default-carousel"
-    class="relative w-[85%] lg:min-w-[720px]"
-    data-carousel="slide"
-  >
-    <!-- Carousel wrapper -->
-    <div
-      class="relative h-72 overflow-hidden rounded-lg md:h-96 lg:min-h-[332px] lg:h-[85vh]"
-    >
-      <!-- Item 1 -->
-      {
-        shuffled.map((image) => {
-          return (
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
-              <Image src={image} alt="" class="h-full w-full rounded-lg" />
-            </div>
-          );
-        })
-      }
-    </div>
-    <!-- Slider indicators -->
-    <div
-      class="hidden absolute z-30 md:flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
-    >
-      {
-        shuffled.map((_, index) => {
-          return (
-            <button
-              type="button"
-              class="w-1 h-1 lg:w-3 lg:h-3 rounded-full"
-              aria-current="true"
-              aria-label={`Slide ${index + 1}`}
-              data-carousel-slide-to={`${index}`}
-            />
-          );
-        })
-      }
+<section id="gallery" class="py-24 bg-muted/20">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-heading font-bold text-foreground mb-4">Gallery</h2>
+        <p class="text-muted-foreground">Moments from our journey.</p>
     </div>
 
-    <!-- Slider controls -->
-    <button
-      type="button"
-      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-prev
-    >
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-      >
-        <svg
-          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M5 1 1 5l4 4"></path>
-        </svg>
-        <span class="sr-only">Previous</span>
-      </span>
-    </button>
-    <button
-      type="button"
-      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
-      data-carousel-next
-    >
-      <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
-      >
-        <svg
-          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 6 10"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="m1 9 4-4-4-4"></path>
-        </svg>
-        <span class="sr-only">Next</span>
-      </span>
-    </button>
+    <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
+      {shuffled.slice(0, 15).map((img) => (
+        <div class="break-inside-avoid overflow-hidden rounded-xl bg-muted">
+           <Image 
+            src={img.default} 
+            alt="Gallery Image" 
+            class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500"
+            width={600}
+           />
+        </div>
+      ))}
+    </div>
+    
+    <div class="text-center mt-12">
+        <p class="text-sm text-muted-foreground italic">Refreshing the page will show different random memories.</p>
+    </div>
   </div>
-</div>
+</section>

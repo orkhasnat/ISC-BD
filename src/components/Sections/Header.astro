@@ -1,128 +1,64 @@
 ---
-import HeaderLink from "@/components/helper/headerlink.astro";
-import HeaderLinkSmall from "@/components/helper/headerlink-small.astro";
-// const base = import.meta.env.BASE_URL; // not needed for custom domain
-// import logo from "@/assets/logo.webp";
+import { Image } from "astro:assets";
+import logo from "@/assets/logo.webp";
+
+const links = [
+  { name: "About Us", href: "/#about" },
+  { name: "Projects", href: "/#projects" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Contact", href: "/#contact" },
+  { name: "Team", href: "/#team" },
+];
 ---
 
-<style>
-  /* .m_fade {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s linear 300ms;
-  } */
-  .only-on-dark {
-    display: none;
-  }
-  .dark {
-    background-color: white;
-    color: black;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .only-on-dark {
-      display: block;
-    }
-
-    .only-on-light {
-      display: none;
-    }
-    .dark {
-      background-color: black;
-      color: white;
-    }
-  }
-</style>
-
-<header class="dark pb-2 fixed top-0 z-50 w-full">
-  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-    <!-- lg+ -->
-    <nav class="flex items-center justify-between h-16 lg:h-20">
+<header class="fixed top-0 z-50 w-full border-b border-border/10 bg-background/80 backdrop-blur-md transition-all duration-200">
+  <div class="container mx-auto px-4 lg:px-8">
+    <div class="flex h-16 items-center justify-between lg:h-20">
       <div class="flex-shrink-0">
-        <a href="/" title="" class="flex">
-          <img class="w-auto h-14 only-on-light" src="/logo.webp" alt="logo" />
-          {/* src=`${base}/logo.webp` // not needed for custom domain */}
-          <img
-            class="w-auto h-[5rem] only-on-dark"
-            src="/logoDark.webp"
-            alt="logo"
-          />
-          {/* src=`${base}/logoDark.webp` // not needed for custom domain */}
+        <a href="/" title="Home" class="flex items-center gap-3 group">
+            <Image src={logo} alt="ISC-BD Logo" class="h-10 w-auto transition-transform group-hover:scale-105" width={80} height={80} />
+            <span class="font-heading text-2xl font-bold tracking-tight text-primary">ISC-BD</span>
         </a>
       </div>
-      <button
-        type="button"
-        class="dark inline-flex p-2 transition-all duration-200 rounded-md lg:hidden focus:bg-gray-100 hover:bg-gray-100"
-        id="data-button"
-      >
-        <!-- Menu open: "hidden", Menu closed: "block" -->
-        <svg
-          id="data-menu"
-          class="block w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6 h16 M4 12 h 16 M4 18 h16"></path>
-        </svg>
 
-        <!-- Menu open: "block", Menu closed: "hidden" -->
-        <svg
-          id="data-close"
-          class="hidden w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M6 18L18 6M6 6l12 12"></path>
+      <!-- Desktop Menu -->
+      <nav class="hidden lg:flex lg:gap-x-8">
+        {links.map((link) => (
+          <a href={link.href} class="text-sm font-medium text-muted-foreground transition-colors hover:text-primary">
+            {link.name}
+          </a>
+        ))}
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button type="button" id="mobile-menu-btn" class="inline-flex p-2 text-muted-foreground lg:hidden hover:text-primary">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
       </button>
+    </div>
+  </div>
 
-      <div class="hidden lg:flex lg:items-center lg:ml-auto lg:space-x-10">
-        <HeaderLink name="About Us" href="/#link-about" />
-        <HeaderLink name="Projects" href="/#link-projects" />
-        <HeaderLink name="Gallery" href="/#link-gallery" />
-        <HeaderLink name="Contact" href="/#link-contact" />
-      </div>
-    </nav>
-
-    <!-- xs to lg -->
-    <nav
-      id="data-header"
-      class="dark mt-2 mb-1 border border-gray-200 rounded-md shadow-md hidden"
-    >
-      <div class="flow-root">
-        <div class="flex flex-col px-6 space-y-1">
-          <HeaderLinkSmall name="About Us" href="/#link-about" />
-          <HeaderLinkSmall name="Projects" href="/#link-projects" />
-          <HeaderLinkSmall name="Gallery" href="/#link-gallery" />
-          <HeaderLinkSmall name="Contact" href="/#link-contact" />
-        </div>
-      </div>
-    </nav>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden border-t border-border bg-background lg:hidden shadow-lg">
+    <div class="space-y-1 px-4 pb-3 pt-2">
+      {links.map((link) => (
+        <a href={link.href} class="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-primary">
+          {link.name}
+        </a>
+      ))}
+    </div>
   </div>
 </header>
 
 <script>
-  const button = document.querySelector("button#data-button");
-  const nav = document.querySelector("#data-header");
-  const menu = document.querySelector("#data-menu");
-  const close = document.querySelector("#data-close");
-  button.addEventListener("click", () => {
-    nav.classList.toggle("hidden");
-    // nav.classList.toggle("m_fade");
-    // hamburger menu
-    menu.classList.toggle("hidden");
-    close.classList.toggle("hidden");
-  });
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+
+  if (btn && menu) {
+    btn.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+  }
 </script>

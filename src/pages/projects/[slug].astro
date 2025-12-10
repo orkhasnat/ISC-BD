@@ -1,0 +1,60 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map(entry => ({
+    params: { slug: entry.slug }, props: { entry },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'projects'>;
+}
+
+const { entry } = Astro.props as Props;
+const { Content } = await entry.render();
+---
+
+<Layout pageTitle={entry.data.title}>
+    <div class="relative w-full h-[50vh] min-h-[400px]">
+        <Image 
+            src={entry.data.coverImage as ImageMetadata} 
+            alt={entry.data.title} 
+            class="absolute inset-0 w-full h-full object-cover filter brightness-50"
+            transition:name={`image-${entry.slug}`}
+        />
+        <div class="absolute inset-0 flex items-center justify-center p-4">
+            <div class="text-center text-white max-w-4xl mx-auto animate-fade-in">
+                <span class="inline-block py-1 px-3 rounded-full bg-primary/80 backdrop-blur-sm text-sm font-medium mb-4 text-white uppercase tracking-wider">
+                    {entry.data.category}
+                </span>
+                <h1 class="text-4xl md:text-5xl lg:text-7xl font-heading font-bold mb-4 drop-shadow-lg">
+                    {entry.data.title}
+                </h1>
+                <div class="flex items-center justify-center gap-4 text-sm md:text-base font-medium opacity-90">
+                    {entry.data.location && (
+                        <span>📍 {entry.data.location}</span>
+                    )}
+                    {entry.data.date && (
+                        <span>📅 {entry.data.date.toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}</span>
+                    )}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <article class="max-w-3xl mx-auto px-4 py-16 md:py-24">
+        <div class="prose prose-lg prose-slate dark:prose-invert mx-auto [&>p:first-of-type]:text-xl [&>p:first-of-type]:leading-relaxed [&>p:first-of-type]:text-foreground/80">
+            <Content />
+        </div>
+        
+        <div class="mt-16 pt-8 border-t border-border flex justify-between items-center">
+             <a href="/#projects" class="inline-flex items-center text-primary hover:text-primary/80 font-medium transition-colors">
+                ← Back to Projects
+            </a>
+        </div>
+    </article>
+</Layout>

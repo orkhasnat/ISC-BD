@@ -1,12 +1,7 @@
 ---
-import "@fontsource-variable/inter";
-import "@fontsource/poppins";
-import "@fontsource/arvo";
-import "@fontsource/fredoka-one";
-import "@fontsource/aleo";
-import "@fontsource/abril-fatface";
+import "@fontsource/merriweather";
+import "@fontsource/lato";
 
-import "flowbite";
 import "@/styles/index.css";
 
 import Footer from "@/components/Sections/Footer.astro";
@@ -21,6 +16,9 @@ const socialMetaImage = site + "/logo.webp";
 const { pageTitle } = Astro.props;
 const SiteDescription =
 	"Initiative for Social Change Bangladesh. Working to create a society that values the dignity and freedom of lives on earth";
+
+/* Paper Texture - Grainy SVG Pattern */
+const paperTexture = `data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E`;
 
 // to reduce bundle size
 // <!-- initialize theme -->
@@ -48,13 +46,10 @@ const SiteDescription =
 // 	</script>
 ---
 
-<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<html lang="en" class="h-full scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		{
-			/* <link rel="icon" href={`${base}/favicon.svg`} type="image/svg+xml" /> // not needed for custom domain */
-		}
 		<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={SiteDescription} />
@@ -65,26 +60,15 @@ const SiteDescription =
 		<meta property="og:type" content="website" />
 		<meta property="og:description" content={SiteDescription} />
 		<meta property="og:image" content={socialMetaImage} />
-		{
-			/*<meta property="og:url" content={site + base} /> // not needed for custom domain */
-		}
 		<meta property="og:url" content={site} />
 		<meta name="twitter:card" content="summary_large_image" />
-		<!-- <script is:inline>
-			window.onload = function () {
-				document.getElementById("loading").style.display = "none";
-			};
-		</script> -->
 	</head>
-	<!-- <div id="loading">
-		<Loader />
-	</div> -->
-	<body class="h-full overflow-x-hidden text-base">
+	<body class="flex min-h-full flex-col font-body text-foreground antialiased bg-background" style={`background-image: url("${paperTexture}");`}>
+        <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-background focus:text-primary">Skip to content</a>
 		<Header />
-		<main>
+		<main id="main-content" class="flex-1">
 			<slot />
 		</main>
 		<Footer />
-		<script src="node_modules/flowbite/dist/flowbite.min.js"></script>
 	</body>
 </html>

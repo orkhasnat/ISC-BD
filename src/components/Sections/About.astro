@@ -1,46 +1,64 @@
 ---
-import Tabs from "@/components/Sections/tabs.astro";
-import Location from "@/components/Sections/Location.astro";
-import Team from "@/components/Sections/team.astro";
+import Team from "@/components/Sections/Team.astro";
+import { Icon } from "astro-icon/components";
 
-/* 
-The ISC was founded in 2022, as a CSO in Bangladesh. It is established to
-promote “A society that values the dignity and freedom of lives on earth”.
-We work for the most marginalized and vulnerable people that we term as
-‘Our Concern Folks’ in short ‘OCF’. Since its inception, ISC has done
-several activities and programs designed to sustainable improvement of the
-lives and well-being of most marginalized and vulnerable communities in
-the northern part of Bangladesh. ISC believes sustainable changes happen
-through the systemic reformation of society. This reformation is not
-possible without guaranteeing the changes in the lives of the most
-vulnerable and marginalized communities. As a development organization ISC
-focuses on the value of all lives on earth with the same dignity and
-importance, transformational change of people’s social role for social
-change, balanced interaction between humans and flora and fauna for green
-ecology, priority to native needs and knowledge inclusive sustainable
-development, develop social leaders with competency based skill for
-enterprise development, priority to indigenous, disable, gender diverse
-population and occupational minorities.
-*/
+const features = [
+  {
+    title: "Vision",
+    icon: "mdi:eye",
+    description: "A society that values the dignity and freedom of lives on earth."
+  },
+  {
+    title: "Mission",
+    icon: "mdi:bullseye-arrow",
+    description: "Equipped people to take control over their lives and to protect their ecosystem for sustainable development."
+  },
+  {
+    title: "Objective",
+    icon: "mdi:stairs-box", 
+    description: "Ensure sustainable and quality life of vulnerable people who are left behind in socio-economic backward situations."
+  }
+];
 ---
 
-<div class="flex flex-col lg:flex-row py-16 px-4">
-  <div class="basis-1/2 p-4">
-    <h1 class="text-4xl text-blue-600 text-center lg:text-left pb-4 lg:pl-2">
-      Who We Are
-    </h1>
-    <p class="text-2xl text-blue-500">
-      ISC was founded in 2022, as a CSO <em>(Civil Society Organization)</em> in
-      Bangladesh. It is established to promote
-      <strong>
-        “A society that values the dignity and freedom of lives on earth”.
-      </strong>We work for the most marginalized and vulnerable people in
-      Bangladesh.
-    </p>
+<section id="about" class="py-24 bg-background">
+  <div class="container mx-auto px-4">
+    <!-- Intro -->
+    <div class="flex flex-col lg:flex-row gap-12 items-center mb-24">
+      <div class="lg:w-1/2">
+        <h2 class="text-4xl lg:text-5xl font-heading font-bold text-primary mb-6">Who We Are</h2>
+        <div class="text-lg text-foreground/80 leading-relaxed space-y-4">
+          <p>
+            ISC was founded in 2022, as a CSO <em>(Civil Society Organization)</em> in Bangladesh. 
+            It is established to promote <strong class="text-primary">“A society that values the dignity and freedom of lives on earth”.</strong>
+          </p>
+          <p>
+            We work for the most marginalized and vulnerable people in Bangladesh, focusing on sustainable improvement of lives and the preservation of our ecosystem.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Feature/Mission Cards (Bento Grid) -->
+      <div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-4 auto-rows-[minmax(180px,auto)]">
+        {features.map((feature, i) => (
+          <div class={`group relative overflow-hidden p-6 rounded-2xl border border-border/40 bg-white/60 dark:bg-zinc-900/60 backdrop-blur-sm hover:bg-white/80 hover:shadow-lg transition-all duration-300 ${feature.title === 'Mission' ? 'md:col-span-2 bg-primary/5 border-primary/20' : ''}`}>
+            
+            <div class="absolute top-0 right-0 -mr-4 -mt-4 w-24 h-24 rounded-full bg-gradient-to-br from-primary/20 to-transparent blur-2xl group-hover:from-primary/30 transition-colors"></div>
+
+            <div class={`mb-4 inline-flex items-center justify-center p-3 rounded-xl ${feature.title === 'Mission' ? 'bg-primary/20 text-primary' : 'bg-muted text-muted-foreground group-hover:text-primary group-hover:bg-primary/10'} transition-colors`}>
+               <Icon name={feature.icon} class="w-6 h-6" />
+            </div>
+            
+            <div>
+              <h3 class={`text-xl font-bold font-heading mb-3 ${feature.title === 'Mission' ? 'text-primary' : ''}`}>{feature.title}</h3>
+              <p class="text-foreground/80 leading-relaxed font-body">{feature.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Team Section -->
+    <Team />
   </div>
-  <div class="basis-1/2 grid place-content-center">
-    <Tabs />
-  </div>
-</div>
-<Location />
-<Team />
+</section>

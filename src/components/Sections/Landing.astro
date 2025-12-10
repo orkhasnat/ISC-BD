@@ -1,84 +1,39 @@
 ---
-// const baseDir = import.meta.env.BASE_URL;
+import { Image } from "astro:assets";
+// Using one hero image for now for better LCP
+import heroImage from "@/assets/cover/collage.webp";
 ---
 
-<style>
-  .anim {
-    animation: text-focus-in 1.2s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
-  }
+<section class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <Image 
+            src={heroImage} 
+            alt="ISC Activity Collage" 
+            class="h-full w-full object-cover object-center brightness-50"
+            loading="eager"
+        />
+    </div>
 
-  @keyframes text-focus-in {
-    0% {
-      filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      filter: blur(0);
-      opacity: 1;
-    }
-  }
-  .bg-pan-top {
-    animation: bg-pan-top 6s ease infinite both;
-  }
-  @keyframes bg-pan-top {
-    0% {
-      background-position: 50% 100%;
-    }
-    100% {
-      background-position: 50% 0;
-    }
-  }
-</style>
-<!-- bg-no-repeat when one image ;bg-[url('/ISC-BD/logo.jpeg')] -->
-<section
-  class="bg-center bg-cover bg-gray-500 bg-blend-multiply bg-pan-top"
-  data-anim
->
-  <div
-    class="px-4 mx-auto max-w-screen-xl text-center h-screen grid place-content-center"
-  >
-    <h1
-      class="mb-4 tracking-tight text-amber-500 md:text-6xl lg:text-7xl pt-24"
-    >
-      Initiative for Social Change
-    </h1>
-    <p
-      id="data-slogans"
-      class="mb-8 text-lg font-normal text-gray-300 lg:text-3xl px-16 lg:px-48"
-    >
-    </p>
-  </div>
+    <!-- Content -->
+    <div class="relative z-10 px-4 text-center">
+        <h1 class="mx-auto mb-6 max-w-4xl font-heading text-5xl font-bold text-white drop-shadow-xl md:text-7xl lg:text-8xl animate-fade-in opacity-0" style="animation-delay: 0.2s">
+            Initiative for Social Change
+        </h1>
+        <p class="mx-auto mb-10 max-w-2xl text-lg text-white/90 md:text-2xl animate-fade-in opacity-0" style="animation-delay: 0.5s">
+            Working to create a society that values the dignity and freedom of lives on earth.
+        </p>
+        <div class="animate-fade-in opacity-0" style="animation-delay: 0.8s">
+            <a href="#projects" class="rounded-full bg-primary px-8 py-3 text-lg font-semibold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:-translate-y-1">
+                See Our Projects
+            </a>
+        </div>
+    </div>
+    
+    <!-- Scroll Down indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce text-white/80">
+        <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+    </div>
 </section>
-<script is:inline>
-  const time = 6000;
-  const len = 6;
-  const imgs = ["collage", "school2", "water", "winter2", "vera", "karam"];
-  const slogans = [
-    "",
-    "Our school is our joy as we learn in our language",
-    // "Saving nature is saving the love of mother for care",
-    "Keeping good health is a state of simple awareness",
-    "Sharing warmth, one cloth at a time",
-    "Small climate smart livelihood for our growth and market",
-    "Our culture is our pride and identity with unity to others",
-  ];
-  let i = 0;
-  const pt = document.getElementById("data-slogans");
-  const bgElem = document.querySelector("[data-anim]");
-  const changeHero = () => {
-    pt.innerText = slogans[i];
-    pt.classList.toggle("anim");
-    // bgElem.classList.toggle("bg-pan-top");
-
-    // bgElem.style.backgroundImage = `url("/ISC-BD/cover/${imgs[i]}.webp")`; // why basedir is not working??
-    bgElem.style.backgroundImage = `url("/cover/${imgs[i]}.webp")`;
-    i = (i + 1) % len;
-    setTimeout(() => {
-      pt.classList.toggle("anim");
-      // bgElem.classList.toggle("bg-pan-top");
-    }, time - 100);
-  };
-
-  changeHero();
-  setInterval(changeHero, time);
-</script>
